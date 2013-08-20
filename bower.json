@@ -1,0 +1,11 @@
+{
+	"name": "wings",
+	"description": "A Flight companion library",
+	"version": "0.1.0",
+	"ignore": [
+		".gitignore"
+	],
+	"dependencies": {
+		"flight": "git://github.com/flightjs/flight.git"
+	}
+}
