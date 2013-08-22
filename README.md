@@ -14,4 +14,4 @@ Wings provides an alternative Flight component.
 
 #### `domReady`: Boolean
 
-Optional. If true, will query the selector only after the DOM is fully loaded.
+Optional. If true, the selector will queried after the DOM is fully loaded.
