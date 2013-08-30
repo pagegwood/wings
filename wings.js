@@ -51,7 +51,7 @@ define(
 							feature
 						);
 						
-						_.forOwn(media, function (query, name){
+						_.forOwn(media, function (query, name) {
 						
 							if (feature[name] === false) {
 						
