@@ -10,26 +10,34 @@ define(
 	
 	function (_) {
 	
-		return function (features) {
+		return function (config) {
 		
-			features = features || {};
+			var features = config.features,
+			
+			media = config.media || {
+				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
+			};
 		
 			_.forOwn(features, function (feature, dependency) {
 				
 				try {
 					
-					var  Component = require(dependency);
+					var Component = require(dependency);
 					
 					_.forEach([].concat(feature), function (feature) {
 				
-						if (!feature) {
+						if (feature === false) {
 						
 							feature = {
 								enabled: false, 
-								mobile: {
+							};
+							
+							_.forOwn(media, function (query, name){
+								
+								feature[name] = {
 									enabled: false
 								}
-							};
+							});
 						}
 			
 						feature = jQuery.extend(
@@ -37,27 +45,32 @@ define(
 							{
 								domReady: false,
 								enabled: true,
-								mobile: {},
 								options: {},
 								selector: document
 							},
 							feature
 						);
-					
-						if (!feature.mobile) {
 						
-							feature.mobile = {
-								enabled: false
-							};
-						}
-				
-						if (Modernizr.mq('only screen and (min-device-width: 320px) and (max-device-width: 767px)')) {
-				
-							feature = jQuery.extend(
-								feature,
-								feature.mobile
-							);
-						}
+						_.forOwn(media, function (query, name){
+						
+							if (feature[name] === false) {
+						
+								feature[name] = {
+									enabled: false
+								}
+							}
+							
+							if (feature[name] && Modernizr.mq(query)) {
+								
+								feature = jQuery.extend(
+									true,
+									feature,
+									feature[name]
+								);
+								
+								delete feature[name];
+							}
+						});
 			
 						if (feature.enabled) {
 				
