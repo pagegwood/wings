@@ -8,6 +8,6 @@
 	"dependencies": {
 		"flight": "git://github.com/flightjs/flight.git",
 		"lodash": "git://github.com/bestiejs/lodash.git",
-		"modernizr": "git://github.com/Modernizr/Modernizr.git",
+		"modernizr": "git://github.com/Modernizr/Modernizr.git"
 	}
 }
