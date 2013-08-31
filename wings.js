@@ -10,37 +10,35 @@ define(
 	
 	function (_) {
 	
-		return function (config) {
+		return function (modules, media) {
 		
-			var features = config.features,
-			
-			media = config.media || {
+			media = media || {
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
 		
-			_.forOwn(features, function (feature, dependency) {
+			_.forOwn(modules, function (config, module) {
 				
 				try {
 					
-					var Component = require(dependency);
+					var Component = require(module);
 					
-					_.forEach([].concat(feature), function (feature) {
+					_.forEach([].concat(config), function (config) {
 				
-						if (feature === false) {
+						if (config === false) {
 						
-							feature = {
+							config = {
 								enabled: false, 
 							};
 							
 							_.forOwn(media, function (query, name){
 								
-								feature[name] = {
+								config[name] = {
 									enabled: false
 								}
 							});
 						}
 			
-						feature = jQuery.extend(
+						config = jQuery.extend(
 							true, 
 							{
 								domReady: false,
@@ -48,33 +46,33 @@ define(
 								options: {},
 								selector: document
 							},
-							feature
+							config
 						);
 						
 						_.forOwn(media, function (query, name) {
 						
-							if (feature[name] === false) {
+							if (config[name] === false) {
 						
-								feature[name] = {
+								config[name] = {
 									enabled: false
 								}
 							}
 							
-							if (feature[name] && Modernizr.mq(query)) {
+							if (config[name] && Modernizr.mq(query)) {
 								
-								feature = jQuery.extend(
+								config = jQuery.extend(
 									true,
-									feature,
-									feature[name]
+									config,
+									config[name]
 								);
 								
-								delete feature[name];
+								delete config[name];
 							}
 						});
 			
-						if (feature.enabled) {
+						if (config.enabled) {
 				
-							Component.attachTo(feature.selector, feature.options, feature.domReady);
+							Component.attachTo(config.selector, config.options, config.domReady);
 						}
 					});
 				}
