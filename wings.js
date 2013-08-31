@@ -72,7 +72,7 @@ define(
 			
 						if (config.enabled) {
 				
-							Component.attachTo(config.selector, config.options, config.domReady);
+							Component.attachTo(config.selector, config.domReady, config.options);
 						}
 					});
 				}
