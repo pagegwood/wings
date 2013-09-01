@@ -14,8 +14,8 @@ A Flight companion library.
 
 #### `domReady`: Boolean
 
+Optional. If true, the Component will be attached to the selected node(s) after the DOM is fully loaded.
+
 #### `options`: Object
 
 [See offical Flight docs](https://github.com/flightjs/flight/blob/master/doc/component_api.md#options-object)
-
-Optional. If true, the Component will be attached to the selected node(s) after the DOM is fully loaded.
