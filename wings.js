@@ -1,7 +1,7 @@
 define(
 
 	[
-		'../lodash/lodash',
+		'../lodash/dist/lodash',
 		'../es5-shim/es5-sham',
 		'../es5-shim/es5-shim',
 		'../jquery/jquery',
