@@ -5,7 +5,7 @@ define(
 		'../modernizr/modernizr',
 		'../jquery/jquery',
 		'../es5-shim/es5-sham',
-		'../es5-shim/es5-shim',
+		'../es5-shim/es5-shim'
 	],
 	
 	function (_) {
