@@ -51,6 +51,8 @@ define(
 						
 						_.forOwn(media, function (query, name) {
 						
+							config[name] = config[name] || {};
+						
 							if (config[name] === false) {
 						
 								config[name] = {
