@@ -3,9 +3,9 @@ define(
 	[
 		'../lodash/dist/lodash',
 		'../modernizr/modernizr',
+		'../jquery/jquery',
 		'../es5-shim/es5-sham',
 		'../es5-shim/es5-shim',
-		'../jquery/jquery'
 	],
 	
 	function (_) {
