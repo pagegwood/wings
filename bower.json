@@ -1,6 +1,6 @@
 {
 	"name": "Wings",
-	"description": "A Flight companion library",
+	"description": "Flight companion library",
 	"version": "0.1.2",
 	"ignore": [
 		".gitignore"
