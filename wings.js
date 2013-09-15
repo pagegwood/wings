@@ -2,10 +2,10 @@ define(
 
 	[
 		'../lodash/dist/lodash',
+		'../modernizr/modernizr',
 		'../es5-shim/es5-sham',
 		'../es5-shim/es5-shim',
-		'../jquery/jquery',
-		'../modernizr/modernizr'
+		'../jquery/jquery'
 	],
 	
 	function (_) {
@@ -58,16 +58,16 @@ define(
 								}
 							}
 							
-							if (config[name] && Modernizr.mq(query)) {
+							if (Modernizr.mq(query)) {
 								
 								config = jQuery.extend(
 									true,
 									config,
 									config[name]
 								);
-								
-								delete config[name];
 							}
+							
+							delete config[name];
 						});
 			
 						if (config.enabled) {
@@ -78,7 +78,7 @@ define(
 				}
 				catch (ex) {
 					
-					console.error(ex.message);
+					console.log(ex.message);
 				}
 			});
 		};
