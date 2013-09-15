@@ -1,6 +1,6 @@
 # Wings
 
-A Flight companion library.
+Flight companion library.
 
 ## Wings(modules, [media])
 
