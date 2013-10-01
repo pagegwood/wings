@@ -4,7 +4,7 @@ define(
 		'../es5-shim/es5-sham',
 		'../es5-shim/es5-shim',
 		'../jquery/jquery',
-		'../matchmedia/matchMedia'
+		'../mediamatch/matchMedia'
 	],
 	
 	function () {
