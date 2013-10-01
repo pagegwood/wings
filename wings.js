@@ -1,14 +1,13 @@
 define(
 
 	[
-		'../lodash/dist/lodash',
-		'../modernizr/modernizr',
-		'../jquery/jquery',
 		'../es5-shim/es5-sham',
-		'../es5-shim/es5-shim'
+		'../es5-shim/es5-shim',
+		'../jquery/jquery',
+		'../matchmedia/matchMedia'
 	],
 	
-	function (_) {
+	function () {
 	
 		return function (modules, media) {
 		
@@ -16,13 +15,13 @@ define(
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
 		
-			_.forOwn(modules, function (config, module) {
+			Object.keys(modules).forEach(function (module) {
 				
 				try {
 					
 					var Component = require(module);
 					
-					_.forEach([].concat(config), function (config) {
+					[].concat(modules[module]).forEach(function (config) {
 				
 						if (config === false) {
 						
@@ -49,7 +48,7 @@ define(
 							config
 						);
 						
-						_.forOwn(media, function (query, name) {
+						Object.keys(media).forEach(function (query, name) {
 						
 							config[name] = config[name] || {};
 						
@@ -60,7 +59,7 @@ define(
 								}
 							}
 							
-							if (Modernizr.mq(query)) {
+							if (window.matchMedia(query).matches) {
 								
 								config = jQuery.extend(
 									true,
