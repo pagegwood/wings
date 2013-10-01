@@ -29,7 +29,7 @@ define(
 								enabled: false, 
 							};
 							
-							_.forOwn(media, function (query, name){
+							Object.keys(media).forEach(function (name){
 								
 								config[name] = {
 									enabled: false
@@ -48,7 +48,7 @@ define(
 							config
 						);
 						
-						Object.keys(media).forEach(function (query, name) {
+						Object.keys(media).forEach(function (name) {
 						
 							config[name] = config[name] || {};
 						
@@ -59,7 +59,7 @@ define(
 								}
 							}
 							
-							if (window.matchMedia(query).matches) {
+							if (window.matchMedia(media[name]).matches) {
 								
 								config = jQuery.extend(
 									true,
