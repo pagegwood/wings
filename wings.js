@@ -9,24 +9,24 @@ define(
 	
 	function () {
 	
-		return function (modules, media) {
+		return function (modules, queries) {
 		
-			media = media || {
+			queries = queries || {
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
 			
-			Object.keys(media).forEach(function (name) {
+			Object.keys(queries).forEach(function (name) {
 								
-				media[name] = window.matchMedia(media[name]).matches;
+				queries[name] = window.matchMedia(queries[name]).matches;
 			});
 		
-			Object.keys(modules).forEach(function (module) {
+			Object.keys(modules).forEach(function (name) {
 				
 				try {
 					
-					var Component = require(module);
+					var Component = require(name);
 					
-					[].concat(modules[module]).forEach(function (config) {
+					[].concat(modules[name]).forEach(function (config) {
 				
 						if (config === false) {
 						
@@ -34,7 +34,7 @@ define(
 								enabled: false
 							};
 							
-							Object.keys(media).forEach(function (name) {
+							Object.keys(queries).forEach(function (name) {
 								
 								config[name] = {
 									enabled: false
@@ -53,7 +53,7 @@ define(
 							config
 						);
 						
-						Object.keys(media).forEach(function (name) {
+						Object.keys(queries).forEach(function (name) {
 						
 							config[name] = (typeof config[name] === 'undefined' ? {} : config[name]);
 						
@@ -64,7 +64,7 @@ define(
 								};
 							}
 							
-							if (media[name]) {
+							if (queries[name]) {
 								
 								config = jQuery.extend(
 									true,
