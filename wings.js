@@ -15,7 +15,7 @@ define(
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
 			
-			Object.keys(media).forEach(function (name){
+			Object.keys(media).forEach(function (name) {
 								
 				media[name] = window.matchMedia(media[name]).matches;
 			});
