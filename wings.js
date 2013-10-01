@@ -14,6 +14,11 @@ define(
 			media = media || {
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
+			
+			Object.keys(media).forEach(function (name){
+								
+				media[name] = window.matchMedia(media[name]).matches;
+			});
 		
 			Object.keys(modules).forEach(function (module) {
 				
@@ -26,14 +31,14 @@ define(
 						if (config === false) {
 						
 							config = {
-								enabled: false, 
+								enabled: false
 							};
 							
-							Object.keys(media).forEach(function (name){
+							Object.keys(media).forEach(function (name) {
 								
 								config[name] = {
 									enabled: false
-								}
+								};
 							});
 						}
 			
@@ -50,16 +55,16 @@ define(
 						
 						Object.keys(media).forEach(function (name) {
 						
-							config[name] = config[name] || {};
+							config[name] = (typeof config[name] === 'undefined' ? {} : config[name]);
 						
 							if (config[name] === false) {
 						
 								config[name] = {
 									enabled: false
-								}
+								};
 							}
 							
-							if (window.matchMedia(media[name]).matches) {
+							if (media[name]) {
 								
 								config = jQuery.extend(
 									true,
