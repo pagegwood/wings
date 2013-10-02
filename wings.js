@@ -9,37 +9,33 @@ define(
 	
 	function () {
 	
-		return function (modules, queries) {
+		return function (modules, targets) {
 		
-			queries = queries || {
+			var deps = Object.keys(modules),
+			devs;
+		
+			targets = targets || {
 				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 			};
 			
-			Object.keys(queries).forEach(function (name) {
+			devs = Object.keys(targets);
+			
+			devs.forEach(function (dev) {
 								
-				queries[name] = window.matchMedia(queries[name]).matches;
+				targets[dev] = window.matchMedia(targets[dev]).matches;
 			});
 		
-			Object.keys(modules).forEach(function (name) {
+			deps.forEach(function (dep) {
 				
 				try {
 					
-					var Component = require(name);
+					var Component = require(dep);
 					
-					[].concat(modules[name]).forEach(function (config) {
+					[].concat(modules[dep]).forEach(function (config) {
 				
-						if (config === false) {
+						if (!config) {
 						
-							config = {
-								enabled: false
-							};
-							
-							Object.keys(queries).forEach(function (name) {
-								
-								config[name] = {
-									enabled: false
-								};
-							});
+							return false;
 						}
 			
 						config = jQuery.extend(
@@ -53,27 +49,23 @@ define(
 							config
 						);
 						
-						Object.keys(queries).forEach(function (name) {
+						devs.forEach(function (dev) {
 						
-							config[name] = (typeof config[name] === 'undefined' ? {} : config[name]);
-						
-							if (config[name] === false) {
-						
-								config[name] = {
-									enabled: false
-								};
+							if (!config[dev]) {
+							
+								return false;
 							}
 							
-							if (queries[name]) {
+							if (targets[dev]) {
 								
 								config = jQuery.extend(
 									true,
 									config,
-									config[name]
+									config[dev]
 								);
 							}
 							
-							delete config[name];
+							delete config[dev];
 						});
 			
 						if (config.enabled) {
