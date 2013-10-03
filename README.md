@@ -1,8 +1,8 @@
 # Wings
 
-Flight companion library.
+Flight component loader.
 
-## Wings(modules, [media])
+## Wings(modules, [targets])
 
 ####
 
