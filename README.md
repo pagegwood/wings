@@ -81,7 +81,6 @@ Example:
 	},
 	selector: '#foo',
 	smallscreen: {
-		domReady: false,
 		options: {
 			color: '#000'
 		},
