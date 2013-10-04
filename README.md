@@ -22,6 +22,8 @@ var modules = {
 	[, another component to load]
 	[, ... ]
 };
+
+wings(modules);
 ```
 
 Use: 
@@ -36,9 +38,6 @@ var modules = {
 		selector: '#foo'
 	}
 };
-
-wings(modules);
-
 ```
 Use: Prevent a compnent from being loaded
 
