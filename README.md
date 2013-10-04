@@ -119,3 +119,46 @@ Optional. If true, the Component will be attached to the selected node(s) after 
 #### `options`: Object
 
 [See offical Flight docs](https://github.com/flightjs/flight/blob/master/doc/component_api.md#options-object)
+
+Use:
+
+```js
+define(
+	
+	[
+		'path/to/wings/lib/component'
+	],
+
+	function (defineComponent) {
+
+		return defineComponent(function () {
+
+			// do stuff
+		});
+	}
+);
+
+require(
+
+	[
+		'path/to/wings'
+	],
+	
+	function (wings) {
+
+		var modules = {
+			'path/to/wings/component': {
+				domReady: false,
+				enabled: true,
+				options: {},
+				selector: document
+			}
+			[, another component to load]
+			[, another component to load]
+			[, ... ]
+		};
+
+		wings(modules);
+	}
+);
+```
