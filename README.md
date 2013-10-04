@@ -21,7 +21,6 @@ require(
 
 		var modules = {
 			'path/to/flight/component': {
-				domReady: false,
 				enabled: true,
 				options: {},
 				selector: document
@@ -40,7 +39,6 @@ Example:
 
 ```js
 'path/to/flight/component': {
-	domReady: true,
 	options: {
 		color: '#fff'
 	},
