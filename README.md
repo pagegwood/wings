@@ -9,6 +9,7 @@ Flight component loader.
 Flight components path and config map.
 
 Example:
+
 ```js
 var modules = {
 	'path/to/flight/component': {
@@ -28,13 +29,18 @@ wings(modules);
 
 Optional. Target name and media query map. Override default module config per target.
 
-Example:
+Def:
+
 ```js
 var targets = {
 	smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
-},
+};
+```
 
-modules = {
+Use:
+
+```js
+var modules = {
 	'path/to/flight/component': {
 		domReady: true,
 		enabled: true,
@@ -55,13 +61,10 @@ modules = {
 wings(modules, targets);
 ```
 
-Example:
-```js
-var targets = {
-	smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
-},
+Use:
 
-modules = {
+```js
+var modules = {
 	'path/to/flight/component': {
 		enabled: false,
 		smallscreen: {
