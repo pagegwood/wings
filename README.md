@@ -43,7 +43,6 @@ Use:
 var modules = {
 	'path/to/flight/component': {
 		domReady: true,
-		enabled: true,
 		options: {
 			color: '#fff'
 		},
