@@ -1,6 +1,6 @@
 # Wings
 
-Flight component loader.
+Opinionated Flight component loader.
 
 ## Wings(modules[, targets])
 
@@ -91,7 +91,7 @@ Example:
 }
 ```
 
-Example:
+Example: 
 
 ```js
 'path/to/flight/component': {
