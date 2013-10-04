@@ -18,8 +18,8 @@ var modules = {
 		options: {},
 		selector: document
 	}
-	[, another component configuration to load]
-	[, another component configuration to load]
+	[, another component to load]
+	[, another component to load]
 	[, ... ]
 };
 ```
