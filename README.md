@@ -76,7 +76,6 @@ Example:
 
 ```js
 'path/to/your/flight/component': {
-	domReady: true,
 	options: {
 		color: '#fff'
 	},
@@ -95,9 +94,7 @@ Example:
 
 ```js
 'path/to/your/flight/component': {
-	enabled: false,
 	smallscreen: {
-		enabled: true,
 		options: {
 			color: '#000'
 		},
