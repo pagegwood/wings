@@ -8,7 +8,20 @@ Flight component loader.
 
 Flight components path and config map.
 
-Example:
+Def:
+
+```js
+var modules = {
+	'path/to/flight/component': {
+		domReady: true,
+		enabled: true,
+		options: {},
+		selector: document
+	}
+};
+```
+
+Use:
 
 ```js
 var modules = {
