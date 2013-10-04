@@ -1,6 +1,6 @@
 # Wings
 
-An opinionated Flight component loader.
+An opinionated Flight component bootstrap.
 
 ## Wings(modules[, targets])
 
@@ -25,8 +25,8 @@ require(
 				options: {},
 				selector: document
 			}
-			[, another component to load]
-			[, another component to load]
+			[, another component to create]
+			[, another component to create]
 			[, ... ]
 		};
 
@@ -35,7 +35,7 @@ require(
 );
 ```
 
-Example: Define component selector and options
+Example: Configure a component to be created and attached to the selector with options
 
 ```js
 'path/to/your/flight/component': {
@@ -45,7 +45,7 @@ Example: Define component selector and options
 	selector: '#foo'
 }
 ```
-Example: Prevent a component from being loaded
+Example: Prevent a component from being created
 
 ```js
 'path/to/your/flight/component': {
