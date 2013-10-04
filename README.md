@@ -64,7 +64,7 @@ Or
 
 Optional. Target name and media query map. Override default module config per target.
 
-Def:
+Use:
 
 ```js
 var targets = {
@@ -72,46 +72,38 @@ var targets = {
 };
 ```
 
-Use:
+Example:
 
 ```js
-var modules = {
-	'path/to/flight/component': {
-		domReady: true,
+'path/to/flight/component': {
+	domReady: true,
+	options: {
+		color: '#fff'
+	},
+	selector: '#foo',
+	smallscreen: {
+		domReady: false,
 		options: {
-			color: '#fff'
+			color: '#000'
 		},
-		selector: '#foo',
-		smallscreen: {
-			domReady: false,
-			options: {
-				color: '#000'
-			},
-			selector: '#boo'
-		}
+		selector: '#boo'
 	}
-};
-
-wings(modules, targets);
+}
 ```
 
-Use:
+Example:
 
 ```js
-var modules = {
-	'path/to/flight/component': {
-		enabled: false,
-		smallscreen: {
-			enabled: true,
-			options: {
-				color: '#000'
-			},
-			selector: '#boo'
-		}
+'path/to/flight/component': {
+	enabled: false,
+	smallscreen: {
+		enabled: true,
+		options: {
+			color: '#000'
+		},
+		selector: '#boo'
 	}
-};
-
-wings(modules, targets);
+}
 ```
 
 ####
