@@ -35,7 +35,7 @@ require(
 );
 ```
 
-Example: 
+Example: Define component selector and options
 
 ```js
 'path/to/your/flight/component': {
@@ -68,6 +68,8 @@ Use:
 var targets = {
 	smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 };
+
+wings()
 ```
 
 Example:
@@ -120,50 +122,7 @@ Optional. If true, the Component will be attached to the selected node(s) after 
 
 [See offical Flight docs](https://github.com/flightjs/flight/blob/master/doc/component_api.md#options-object)
 
-Use:
-
-```js
-define(
-	
-	[
-		'path/to/wings/lib/component'
-	],
-
-	function (defineComponent) {
-
-		return defineComponent(function () {
-
-			// do stuff
-		});
-	}
-);
-
-require(
-
-	[
-		'path/to/wings'
-	],
-	
-	function (wings) {
-
-		var modules = {
-			'path/to/your/wings/component': {
-				domReady: false,
-				enabled: true,
-				options: {},
-				selector: document
-			}
-			[, another component to load]
-			[, another component to load]
-			[, ... ]
-		};
-
-		wings(modules);
-	}
-);
-```
-
-Example: 
+Example: Attach component to '#foo' only after DOM is ready
 
 ```js
 'path/to/your/wings/component': {
