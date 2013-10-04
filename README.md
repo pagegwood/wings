@@ -69,7 +69,7 @@ var targets = {
 	smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 };
 
-wings()
+wings(modules, targets);
 ```
 
 Example:
