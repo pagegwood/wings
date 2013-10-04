@@ -12,9 +12,11 @@ Def:
 
 ```js
 require(
+
 	[
 		'path/to/wings'
 	],
+	
 	function (wings) {
 
 		var modules = {
