@@ -20,7 +20,7 @@ require(
 	function (wings) {
 
 		var modules = {
-			'path/to/flight/component': {
+			'path/to/your/flight/component': {
 				enabled: true,
 				options: {},
 				selector: document
@@ -38,7 +38,7 @@ require(
 Example: 
 
 ```js
-'path/to/flight/component': {
+'path/to/your/flight/component': {
 	options: {
 		color: '#fff'
 	},
@@ -48,14 +48,14 @@ Example:
 Example: Prevent a compnent from being loaded
 
 ```js
-'path/to/flight/component': {
+'path/to/your/flight/component': {
 	enabled: false
 }
 ```
 Or
 
 ```js
-'path/to/flight/component': false
+'path/to/your/flight/component': false
 ```
 
 #### `targets`: Object
@@ -73,7 +73,7 @@ var targets = {
 Example:
 
 ```js
-'path/to/flight/component': {
+'path/to/your/flight/component': {
 	domReady: true,
 	options: {
 		color: '#fff'
@@ -92,7 +92,7 @@ Example:
 Example: 
 
 ```js
-'path/to/flight/component': {
+'path/to/your/flight/component': {
 	enabled: false,
 	smallscreen: {
 		enabled: true,
@@ -147,7 +147,7 @@ require(
 	function (wings) {
 
 		var modules = {
-			'path/to/wings/component': {
+			'path/to/your/wings/component': {
 				domReady: false,
 				enabled: true,
 				options: {},
