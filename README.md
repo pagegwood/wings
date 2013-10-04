@@ -8,7 +8,7 @@ Flight component loader.
 
 Flight components path and config map.
 
-Def:
+Use:
 
 ```js
 require(
@@ -36,7 +36,7 @@ require(
 );
 ```
 
-Use: 
+Example: 
 
 ```js
 'path/to/flight/component': {
@@ -47,7 +47,7 @@ Use:
 	selector: '#foo'
 }
 ```
-Use: Prevent a compnent from being loaded
+Example: Prevent a compnent from being loaded
 
 ```js
 'path/to/flight/component': {
