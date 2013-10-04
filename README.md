@@ -89,19 +89,6 @@ Example: Override the selector and color option for small screens.
 }
 ```
 
-Example: 
-
-```js
-'path/to/your/flight/component': {
-	smallscreen: {
-		options: {
-			color: '#000'
-		},
-		selector: '#boo'
-	}
-}
-```
-
 ####
 
 ## Component.attachTo(selector[, domReady][, options])
