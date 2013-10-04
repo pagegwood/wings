@@ -13,9 +13,7 @@ define(
 		
 			var deps = Object.keys(modules),
 			
-			devs = Object.keys((targets = targets || {
-				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
-			}));
+			devs = Object.keys((targets = targets || {}));
 			
 			devs.forEach(function (dev) {
 								

@@ -27,7 +27,7 @@ wings(modules);
 
 #### `targets`: Object
 
-Optional. Target name and media query map. Override default config. 
+Optional. Target name and media query map. Override default module config per target.
 
 ```js
 var targets = {
