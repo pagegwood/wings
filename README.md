@@ -6,7 +6,7 @@ Opinionated Flight component loader.
 
 #### `modules`: Object
 
-Flight components path and config map.
+Component path and config map.
 
 Use:
 
