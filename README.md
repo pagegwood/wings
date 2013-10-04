@@ -8,26 +8,28 @@ Flight component loader.
 
 Flight components path and config map.
 
-Def:
+Def: Default configuration to load component
 
 ```js
 var modules = {
 	'path/to/flight/component': {
-		domReady: true,
+		domReady: false,
 		enabled: true,
 		options: {},
 		selector: document
 	}
+	[, another component configuration to load]
+	[, another component configuration to load]
+	[, ... ]
 };
 ```
 
-Use:
+Use: 
 
 ```js
 var modules = {
 	'path/to/flight/component': {
 		domReady: true,
-		enabled: true,
 		options: {
 			color: '#fff'
 		},
@@ -36,6 +38,23 @@ var modules = {
 };
 
 wings(modules);
+
+```
+Use: Prevent a compnent from being loaded
+
+```js
+var modules = {
+	'path/to/flight/component': {
+		enabled: false
+	}
+};
+```
+Or
+
+```js
+var modules = {
+	'path/to/flight/component': false
+};
 ```
 
 #### `targets`: Object
