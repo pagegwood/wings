@@ -45,7 +45,7 @@ Example:
 	selector: '#foo'
 }
 ```
-Example: Prevent a compnent from being loaded
+Example: Prevent a component from being loaded
 
 ```js
 'path/to/your/flight/component': {
@@ -161,4 +161,16 @@ require(
 		wings(modules);
 	}
 );
+```
+
+Example: 
+
+```js
+'path/to/your/wings/component': {
+	domReady: true,
+	options: {
+		color: '#fff'
+	},
+	selector: '#foo'
+}
 ```
