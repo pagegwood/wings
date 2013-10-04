@@ -72,7 +72,7 @@ var targets = {
 wings(modules, targets);
 ```
 
-Example:
+Example: Override the selector and color option for small screens.
 
 ```js
 'path/to/your/flight/component': {
