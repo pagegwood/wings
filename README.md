@@ -39,31 +39,25 @@ require(
 Use: 
 
 ```js
-var modules = {
-	'path/to/flight/component': {
-		domReady: true,
-		options: {
-			color: '#fff'
-		},
-		selector: '#foo'
-	}
-};
+'path/to/flight/component': {
+	domReady: true,
+	options: {
+		color: '#fff'
+	},
+	selector: '#foo'
+}
 ```
 Use: Prevent a compnent from being loaded
 
 ```js
-var modules = {
-	'path/to/flight/component': {
-		enabled: false
-	}
-};
+'path/to/flight/component': {
+	enabled: false
+}
 ```
 Or
 
 ```js
-var modules = {
-	'path/to/flight/component': false
-};
+'path/to/flight/component': false
 ```
 
 #### `targets`: Object
