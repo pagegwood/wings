@@ -11,19 +11,27 @@ Flight components path and config map.
 Def:
 
 ```js
-var modules = {
-	'path/to/flight/component': {
-		domReady: false,
-		enabled: true,
-		options: {},
-		selector: document
-	}
-	[, another component to load]
-	[, another component to load]
-	[, ... ]
-};
+require(
+	[
+		'path/to/wings'
+	],
+	function (wings) {
 
-wings(modules);
+		var modules = {
+			'path/to/flight/component': {
+				domReady: false,
+				enabled: true,
+				options: {},
+				selector: document
+			}
+			[, another component to load]
+			[, another component to load]
+			[, ... ]
+		};
+
+		wings(modules);
+	}
+);
 ```
 
 Use: 
