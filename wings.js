@@ -12,13 +12,10 @@ define(
 		return function (modules, targets) {
 		
 			var deps = Object.keys(modules),
-			devs;
-		
-			targets = targets || {
-				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
-			};
 			
-			devs = Object.keys(targets);
+			devs = Object.keys((targets = targets || {
+				mobile: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
+			}));
 			
 			devs.forEach(function (dev) {
 								
