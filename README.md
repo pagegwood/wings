@@ -1,6 +1,6 @@
 # Wings
 
-Opinionated Flight component loader.
+Wings is an opinionated Flight component loader.
 
 ## Wings(modules[, targets])
 
