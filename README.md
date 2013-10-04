@@ -8,7 +8,7 @@ Flight component loader.
 
 Flight components path and config map.
 
-Def: Default configuration to load component
+Def:
 
 ```js
 var modules = {
