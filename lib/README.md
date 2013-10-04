@@ -1,5 +1,3 @@
-####
-
 ## Component.attachTo(selector[, domReady][, options])
 
 #### `selector`: String | Element | Element collection
