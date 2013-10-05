@@ -53,18 +53,6 @@ Example: Configure a component to be created and attached to the selected DOM no
 	selector: '#foo'
 }
 ```
-Example: Prevent a component from being created.
-
-```js
-'path/to/your/flight/component': {
-	enabled: false
-}
-```
-Or
-
-```js
-'path/to/your/flight/component': false
-```
 
 Example: Override the selector and color option for small screens.
 
@@ -81,4 +69,17 @@ Example: Override the selector and color option for small screens.
 		selector: '#boo'
 	}
 }
+```
+
+Example: Prevent a component from being created.
+
+```js
+'path/to/your/flight/component': {
+	enabled: false
+}
+```
+Or
+
+```js
+'path/to/your/flight/component': false
 ```
