@@ -80,7 +80,7 @@ Prevent component from being configured.
 	enabled: false
 }
 ```
-or shorthand
+or
 
 ```js
 'path/to/your/flight/component': false
