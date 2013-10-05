@@ -43,7 +43,7 @@ require(
 );
 ```
 
-Example: Configure a component to be created and attached to the selected DOM nodes with options.
+Example: Configure component to be created and attached to the selected DOM nodes with options.
 
 ```js
 'path/to/your/flight/component': {
@@ -54,7 +54,7 @@ Example: Configure a component to be created and attached to the selected DOM no
 }
 ```
 
-Example: Configure a component for small screens, overriding the default configuration.
+Example: Configure component for small screens, overriding the default configuration.
 
 ```js
 'path/to/your/flight/component': {
@@ -71,7 +71,7 @@ Example: Configure a component for small screens, overriding the default configu
 }
 ```
 
-Example: Prevent a component from being created.
+Example: Prevent component from being configured.
 
 ```js
 'path/to/your/flight/component': {
@@ -82,4 +82,19 @@ Or
 
 ```js
 'path/to/your/flight/component': false
+```
+
+Example: Configure component for small screens only.
+
+```js
+'path/to/your/flight/component': {
+	enabled: false,
+	smallscreens: {
+		enabled: true,
+		options: {
+			color: '#000'
+		},
+		selector: '#boo'
+	}
+}
 ```
