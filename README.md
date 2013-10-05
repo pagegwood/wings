@@ -16,8 +16,6 @@ Optional. Target name and media query map. Override default module config by tar
 
 ## Examples
 
-Use:
-
 ```js
 require(
 
@@ -47,7 +45,7 @@ require(
 );
 ```
 
-Example: Configure component to be created and attached to the selected DOM nodes with options.
+Configure component to be created and attached to the selected DOM nodes with options.
 
 ```js
 'path/to/your/flight/component': {
@@ -58,7 +56,7 @@ Example: Configure component to be created and attached to the selected DOM node
 }
 ```
 
-Example: Configure component for small screens, overriding the default configuration.
+Configure component for small screens, overriding the default configuration.
 
 ```js
 'path/to/your/flight/component': {
@@ -75,7 +73,7 @@ Example: Configure component for small screens, overriding the default configura
 }
 ```
 
-Example: Prevent component from being configured.
+Prevent component from being configured.
 
 ```js
 'path/to/your/flight/component': {
@@ -88,7 +86,7 @@ Or
 'path/to/your/flight/component': false
 ```
 
-Example: Configure component for small screens only.
+Configure component for small screens only.
 
 ```js
 'path/to/your/flight/component': {
