@@ -1,4 +1,6 @@
-## Component.attachTo(selector[, domReady][, options])
+## Overview
+
+### Component.attachTo(selector[, domReady][, options])
 
 #### `selector`: String | Element | Element collection
 
@@ -12,7 +14,9 @@ Optional. If true, the Component will be attached to the selected node(s) after 
 
 [See offical Flight docs](https://github.com/flightjs/flight/blob/master/doc/component_api.md#options-object)
 
-Example: Attach component to '#foo' only after DOM is ready
+## Examples
+
+Attach component to '#foo' only after DOM is ready
 
 ```js
 'path/to/your/wings/component': {
