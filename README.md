@@ -8,6 +8,10 @@ A Flight component loader.
 
 Component module path and config map.
 
+#### `targets`: Object
+
+Optional. Target name and media query map. Override default module config by target.
+
 Use:
 
 ```js
@@ -57,10 +61,6 @@ Or
 ```js
 'path/to/your/flight/component': false
 ```
-
-#### `targets`: Object
-
-Optional. Target name and media query map. Override default module config by target.
 
 Use:
 
