@@ -60,7 +60,7 @@ Or
 
 #### `targets`: Object
 
-Optional. Target name and media query map. Override default module config per target.
+Optional. Target name and media query map. Override default module config by target.
 
 Use:
 
