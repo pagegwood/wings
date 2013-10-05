@@ -2,7 +2,9 @@
 
 A Flight component loader.
 
-## wings(modules[, targets])
+## Overview
+
+### wings(modules[, targets])
 
 #### `modules`: Object
 
@@ -12,7 +14,7 @@ Component module path and config map.
 
 Optional. Target name and media query map. Override default module config by target.
 
-## Examples
+### Examples
 
 Use:
 
