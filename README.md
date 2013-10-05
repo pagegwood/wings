@@ -1,6 +1,6 @@
 # Wings
 
-A Flight component loader.
+A Flight component bootstrap.
 
 ## Overview
 
