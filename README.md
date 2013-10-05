@@ -54,7 +54,7 @@ Example: Configure a component to be created and attached to the selected DOM no
 }
 ```
 
-Example: Override the selector and color option for small screens.
+Example: Configure a component for small screens, overriding the default configuration.
 
 ```js
 'path/to/your/flight/component': {
