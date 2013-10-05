@@ -16,7 +16,7 @@ Optional. Target name and media query map. Override default module config by tar
 
 ## Examples
 
-Wings requires an AMD module loader. Use module loader to require Wings.
+Use AMD module loader to require Wings.
 
 ```js
 require(
