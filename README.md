@@ -58,7 +58,7 @@ Configure component to be created and attached to the selected DOM nodes with op
 }
 ```
 
-Configure component for small screens, overriding the default configuration.
+Configure component for the small screen target, overriding the default configuration.
 
 ```js
 'path/to/your/flight/component': {
@@ -85,7 +85,7 @@ Prevent component from being configured.
 'path/to/your/flight/component': false
 ```
 
-Configure component for small screens only.
+Configure component for the small screen target only.
 
 ```js
 'path/to/your/flight/component': {
