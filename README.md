@@ -25,8 +25,8 @@ require(
 				options: {},
 				selector: document
 			}
-			[, another component to create]
-			[, another component to create]
+			[, another component to load]
+			[, another component to load]
 			[, ... ]
 		};
 
