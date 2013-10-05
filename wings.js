@@ -22,57 +22,50 @@ define(
 		
 			deps.forEach(function (dep) {
 				
-				try {
-					
-					var Component = require(dep);
-					
-					[].concat(modules[dep]).forEach(function (config) {
+				var Component = require(dep);
 				
-						if (!config) {
+				[].concat(modules[dep]).forEach(function (config) {
+			
+					if (!config) {
+					
+						return false;
+					}
+		
+					config = jQuery.extend(
+						true, 
+						{
+							domReady: false,
+							enabled: true,
+							options: {},
+							selector: document
+						},
+						config
+					);
+					
+					devs.forEach(function (dev) {
+					
+						if (!config[dev]) {
 						
 							return false;
 						}
-			
-						config = jQuery.extend(
-							true, 
-							{
-								domReady: false,
-								enabled: true,
-								options: {},
-								selector: document
-							},
-							config
-						);
 						
-						devs.forEach(function (dev) {
-						
-							if (!config[dev]) {
+						if (targets[dev]) {
 							
-								return false;
-							}
-							
-							if (targets[dev]) {
-								
-								config = jQuery.extend(
-									true,
-									config,
-									config[dev]
-								);
-							}
-							
-							delete config[dev];
-						});
-			
-						if (config.enabled) {
-				
-							Component.attachTo(config.selector, config.domReady, config.options);
+							config = jQuery.extend(
+								true,
+								config,
+								config[dev]
+							);
 						}
+						
+						delete config[dev];
 					});
-				}
-				catch (ex) {
-					
-					console.log(ex.message);
-				}
+		
+					if (config.enabled) {
+			
+						Component.attachTo(config.selector, config.domReady, config.options);
+					}
+				});
 			});
 		};
 	}
