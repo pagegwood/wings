@@ -32,9 +32,13 @@ require(
 			[, another component to load]
 			[, another component to load]
 			[, ... ]
+		},
+
+		targets = {
+			smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
 		};
 
-		wings(modules);
+		wings(modules, targets);
 	}
 );
 ```
@@ -60,16 +64,6 @@ Or
 
 ```js
 'path/to/your/flight/component': false
-```
-
-Use:
-
-```js
-var targets = {
-	smallscreen: 'only screen and (min-device-width: 320px) and (max-device-width: 767px)'
-};
-
-wings(modules, targets);
 ```
 
 Example: Override the selector and color option for small screens.
