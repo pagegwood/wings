@@ -81,10 +81,7 @@ Prevent component from being configured.
 'path/to/your/flight/component': {
 	enabled: false
 }
-```
-or
 
-```js
 'path/to/your/flight/component': false
 ```
 
