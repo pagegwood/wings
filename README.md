@@ -80,7 +80,7 @@ Prevent component from being configured.
 	enabled: false
 }
 ```
-Or
+or
 
 ```js
 'path/to/your/flight/component': false
