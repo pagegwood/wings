@@ -35,7 +35,7 @@ require(
 );
 ```
 
-Example: Configure a component to be created and attached to the selector with options
+Example: Configure a component to be created and attached to the selected DOM nodes with options
 
 ```js
 'path/to/your/flight/component': {
