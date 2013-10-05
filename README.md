@@ -1,6 +1,6 @@
 # Wings
 
-An opinionated Flight component bootstrap.
+A Flight component loader.
 
 ## Wings(modules[, targets])
 
