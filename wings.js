@@ -22,8 +22,6 @@ define(
 		
 			deps.forEach(function (dep) {
 				
-				var Component = require(dep);
-				
 				[].concat(modules[dep]).forEach(function (config) {
 			
 					if (!config) {
@@ -63,7 +61,11 @@ define(
 		
 					if (config.enabled) {
 			
-						Component.attachTo(config.selector, config.domReady, config.options);
+						require(dep).attachTo(
+							config.selector,
+							config.domReady,
+							config.options
+						);
 					}
 				});
 			});

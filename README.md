@@ -8,15 +8,15 @@ A Flight component loader.
 
 #### `modules`: Object
 
-Component module path and config map.
+Component module path and config mapping.
 
 #### `targets`: Object
 
-Optional. Target name and media query map. Override default module config by target.
+Optional. Device or screen alias and media query mapping. Alias naming is arbitrary.
 
 ## Examples
 
-Use AMD module loader to require Wings.
+Require Wings to load your components.
 
 ```js
 require(
@@ -47,7 +47,7 @@ require(
 );
 ```
 
-Configure component to be created and attached to the selected DOM nodes with options.
+Component will be loaded and attached to #foo with options.
 
 ```js
 'path/to/your/flight/component': {
@@ -58,7 +58,7 @@ Configure component to be created and attached to the selected DOM nodes with op
 }
 ```
 
-Configure component for the small screen target, overriding the default configuration.
+Component will be loaded using smallscreen config when the target matches the smallscreen media query.
 
 ```js
 'path/to/your/flight/component': {
@@ -75,7 +75,7 @@ Configure component for the small screen target, overriding the default configur
 }
 ```
 
-Prevent component from being configured.
+Component will not be loaded.
 
 ```js
 'path/to/your/flight/component': {
@@ -85,7 +85,7 @@ Prevent component from being configured.
 'path/to/your/flight/component': false
 ```
 
-Configure component for the small screen target only.
+Component will not be loaded, except for the smallscreen target.
 
 ```js
 'path/to/your/flight/component': {
