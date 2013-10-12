@@ -1,6 +1,6 @@
 # Wings
 
-A Flight component loader.
+Flight component loader.
 
 ## Overview
 
