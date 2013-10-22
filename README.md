@@ -1,4 +1,4 @@
-# Wings
+# wings
 
 Flight component loader.
 
