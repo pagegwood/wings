@@ -12,7 +12,7 @@ Component path and config mapping.
 
 #### `targets`: Object
 
-Optional. tarice or screen alias and media query mapping.
+Optional. Target alias and media query mapping.
 
 ## Examples
 
