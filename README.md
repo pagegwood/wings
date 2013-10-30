@@ -54,6 +54,7 @@ Create Component instance and attach to selected DOM node.
 'path/to/your/flight/component': {
 	selector: '#foo'
 }
+```
 
 Create Component instance with options and attach to selected DOM node.
 
