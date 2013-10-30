@@ -10,24 +10,18 @@ define(
 	function () {
 	
 		return function (modules, targets) {
-		
-			var deps = Object.keys(modules),
-			
-			devs = Object.keys((targets = targets || {}));
-			
-			devs.forEach(function (dev) {
+
+			Object.keys(targets = targets || {}).forEach(function (alias) {
 								
-				targets[dev] = window.matchMedia(targets[dev]).matches;
+				targets[alias] = window.matchMedia(targets[alias]).matches;
 			});
 		
-			deps.forEach(function (dep) {
+			Object.keys(modules).forEach(function (name) {
 				
-				[].concat(modules[dep]).forEach(function (config) {
+				[].concat(modules[name]).forEach(function (config) {
 			
-					if (!config) {
-					
+					if (!config)
 						return false;
-					}
 		
 					config = jQuery.extend(
 						true, 
@@ -35,38 +29,34 @@ define(
 							domReady: false,
 							enabled: true,
 							options: {},
-							selector: document
+							selector: document,
+							targets: {}
 						},
 						config
 					);
-					
-					devs.forEach(function (dev) {
-					
-						if (!config[dev]) {
-						
+
+					Object.keys(config.targets || {}).forEach(function (alias) {
+
+						if (!targets[alias])
 							return false;
-						}
-						
-						if (targets[dev]) {
-							
-							config = jQuery.extend(
-								true,
-								config,
-								config[dev]
-							);
-						}
-						
-						delete config[dev];
+
+						config.targets[alias] = (config.targets[alias] || { enabled: false });
+
+						config = jQuery.extend(
+							true,
+							config,
+							config.targets[alias]
+						);
 					});
 		
-					if (config.enabled) {
-			
-						require(dep).attachTo(
-							config.selector,
-							config.domReady,
-							config.options
-						);
-					}
+					if (!config.enabled)
+						return false;
+
+					require(name).attachTo(
+						config.selector,
+						config.domReady,
+						config.options
+					);
 				});
 			});
 		};
