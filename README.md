@@ -31,7 +31,8 @@ require(
 			'path/to/your/flight/component': {
 				enabled: true,
 				options: {},
-				selector: document
+				selector: document,
+				targets: {}
 			}
 			[, another component to load]
 			[, another component to load]
