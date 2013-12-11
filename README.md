@@ -1,6 +1,6 @@
 # wings
 
-A Flight Component bootstrap.
+Flight component bootstrap.
 
 ## Overview
 

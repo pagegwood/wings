@@ -40,12 +40,10 @@ define(
 						if (!targets[alias])
 							return false;
 
-						config.targets[alias] = (config.targets[alias] || { enabled: false });
-
 						config = jQuery.extend(
 							true,
 							config,
-							config.targets[alias]
+							{ enabled: !!config.targets[alias] }
 						);
 					});
 		
