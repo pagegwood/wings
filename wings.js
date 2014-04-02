@@ -6,25 +6,27 @@ define(
 		'../jquery/jquery',
 		'../mediamatch/matchMedia'
 	],
-	
+
 	function () {
-	
+
 		return function (modules, targets) {
 
 			Object.keys(targets = targets || {}).forEach(function (alias) {
-								
 				targets[alias] = window.matchMedia(targets[alias]).matches;
 			});
-		
+
 			Object.keys(modules).forEach(function (name) {
-				
+
 				[].concat(modules[name]).forEach(function (config) {
-			
-					if (!config)
-						return false;
-		
+
+					if (!config) {
+						config = {
+							enabled: false
+						};
+					}
+
 					config = jQuery.extend(
-						true, 
+						true,
 						{
 							domReady: false,
 							enabled: true,
@@ -36,25 +38,30 @@ define(
 					);
 
 					Object.keys(config.targets || {}).forEach(function (alias) {
+						var target = config.targets[alias];
 
-						if (!targets[alias])
+						if (!targets[alias]) {
 							return false;
+						}
+
+						if (!target) {
+							target = {
+								enabled: false
+							};
+						}
 
 						config = jQuery.extend(
 							true,
 							config,
-							{ enabled: !!config.targets[alias] }
+							target
 						);
 					});
-		
-					if (!config.enabled)
-						return false;
 
-					require(name).attachTo(
-						config.selector,
-						config.domReady,
-						config.options
-					);
+					if (!config.enabled) {
+						return false;
+					}
+
+					require(name).attachTo(config.selector, config.domReady, config.options);
 				});
 			});
 		};
