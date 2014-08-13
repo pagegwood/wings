@@ -1,18 +1,11 @@
 define(
 
-	[
-		'../es5-shim/es5-sham',
-		'../es5-shim/es5-shim',
-		'../jquery/jquery',
-		'../mediamatch/matchMedia'
-	],
-
 	function () {
 
 		return function (modules, targets) {
 
 			Object.keys(targets = targets || {}).forEach(function (alias) {
-				targets[alias] = window.matchMedia(targets[alias]).matches;
+				targets[alias] = matchMedia(targets[alias]).matches;
 			});
 
 			Object.keys(modules).forEach(function (name) {

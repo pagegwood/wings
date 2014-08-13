@@ -1,6 +1,6 @@
 # wings
 
-Flight component bootstrap.
+Flight component loader.
 
 ## Overview
 
@@ -24,7 +24,7 @@ require(
 	[
 		'path/to/wings'
 	],
-	
+
 	function (wings) {
 
 		var modules = {

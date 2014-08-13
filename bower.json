@@ -1,12 +1,12 @@
 {
 	"name": "wings",
-	"description": "Flight companion library",
+	"description": "Flight component loader",
 	"version": "1.0.0",
 	"ignore": [
 		".gitignore"
 	],
 	"dependencies": {
-		"flight": "git://github.com/flightjs/flight.git",
-		"mediamatch": "git://github.com/paulirish/matchMedia.js.git"
+		"flight": "latest",
+		"mediamatch": "latest"
 	}
 }
