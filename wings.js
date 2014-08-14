@@ -4,7 +4,12 @@ define(
 
 		return function (modules, targets) {
 
-			Object.keys(targets = targets || {}).forEach(function (alias) {
+			if (typeof modules !== 'object') throw new TypeError('modules must be an Object');
+
+			if (typeof targets !== 'object') targets = {};
+
+			Object.keys(targets).forEach(function (alias) {
+
 				targets[alias] = matchMedia(targets[alias]).matches;
 			});
 

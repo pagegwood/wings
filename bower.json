@@ -6,8 +6,8 @@
 		".gitignore"
 	],
 	"dependencies": {
-		"flight": "latest",
-		"matchmedia": "latest"
+		"flight": "1.2.0",
+		"matchmedia": "0.2.0"
 	},
 	"main": "wings.js"
 }
