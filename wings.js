@@ -13,9 +13,9 @@ define(
 				targets[alias] = matchMedia(targets[alias]).matches;
 			});
 
-			Object.keys(modules).forEach(function (name) {
+			Object.keys(modules).forEach(function (module) {
 
-				[].concat(modules[name]).forEach(function (config) {
+				[].concat(modules[module]).forEach(function (config) {
 
 					if (!config) {
 						config = {
@@ -36,17 +36,12 @@ define(
 					);
 
 					Object.keys(config.targets || {}).forEach(function (alias) {
+
 						var target = config.targets[alias];
 
-						if (!targets[alias]) {
-							return false;
-						}
+						if (!targets[alias]) return false;
 
-						if (!target) {
-							target = {
-								enabled: false
-							};
-						}
+						if (!target) target = { enabled: false };
 
 						config = jQuery.extend(
 							true,
@@ -55,11 +50,12 @@ define(
 						);
 					});
 
-					if (!config.enabled) {
-						return false;
-					}
+					if (!config.enabled) return false;
 
-					require(name).attachTo(config.selector, config.domReady, config.options);
+					require([module], function (component) {
+
+						component.attachTo(config.selector, config.domReady, config.options);
+					});
 				});
 			});
 		};
