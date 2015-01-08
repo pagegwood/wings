@@ -2,11 +2,22 @@ define(
 
 	function () {
 
-		return function (modules, targets) {
+		return function (modules/*[, targets][, callback]*/) {
+
+			var targets = {};
+			var callback = null;
+			var modulez = [];
+			var counter = 0;
+			var resolve = function () {
+				if (++counter === modulez.length &&  typeof callback === 'function') {
+					callback();
+				}
+			};
 
 			if (typeof modules !== 'object') throw new TypeError('modules must be an Object');
-
-			if (typeof targets !== 'object') targets = {};
+			if (typeof arguments[1] === 'object') targets = arguments[1];
+			if (typeof arguments[1] === 'function') callback = arguments[1];
+			if (typeof arguments[2] === 'function') callback = arguments[2];
 
 			Object.keys(targets).forEach(function (alias) {
 
@@ -50,13 +61,25 @@ define(
 						);
 					});
 
-					if (!config.enabled) return false;
-
-					require([module], function (component) {
-
-						component.attachTo(config.selector, config.domReady, config.options);
+					modulez.push({
+						config: config,
+						name: module
 					});
 				});
+			});
+
+			modulez.forEach(function (module) {
+				var config = module.config;
+				var name = module.name;
+
+				if (config.enabled) {
+					require([name], function (component) {
+						component.attachTo(config.selector, config.options, config.domReady, resolve);
+					});
+				}
+				else {
+					resolve();
+				}
 			});
 		};
 	}
