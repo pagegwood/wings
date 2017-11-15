@@ -1,0 +1,29 @@
+{
+  "name": "wings",
+  "version": "1.1.0",
+  "description": "Flight component loader",
+  "main": "wings.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagegwood/wings.git"
+  },
+  "keywords": [
+    "flight",
+    "flightjs",
+    "flight.js",
+    "component",
+    "loader"
+  ],
+  "author": "Graham Blevins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pagegwood/wings/issues"
+  },
+  "homepage": "https://github.com/pagegwood/wings#readme"
+}
